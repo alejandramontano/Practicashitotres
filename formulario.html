@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Movimiento de Activos Fijos</title>
+    <link rel="stylesheet" href="formulario.css">
+</head>
+
+<body>
+
+    <h1>Formulario de Movimiento de Activos Fijos</h1>
+
+    <form id="formulario">
+        <fieldset>
+            <legend>Información del Activo</legend>
+            <input type="text" id="id_activo" placeholder="ID Activo" required>
+            <input type="text" id="descripcion" placeholder="Descripción" required>
+            <select id="categoria">
+                <option>Mobiliario</option>
+                <option>Equipo de Cómputo</option>
+                <option>Maquinaria</option>
+                <option>Vehículos</option>
+                <option>Otros</option>
+            </select>
+            <input type="text" id="ubicacion_actual" placeholder="Ubicación Actual">
+        </fieldset>
+
+        <fieldset>
+            <legend>Movimiento</legend>
+            <select id="tipo_movimiento">
+                <option>Alta</option>
+                <option>Baja</option>
+                <option>Traslado</option>
+                <option>Cambio Responsable</option>
+            </select>
+            <input type="date" id="fecha_movimiento" required>
+            <input type="text" id="ubicacion_destino" placeholder="Ubicación Destino">
+            <input type="text" id="responsable_anterior" placeholder="Responsable Anterior">
+            <input type="text" id="nuevo_responsable" placeholder="Nuevo Responsable">
+            <textarea id="motivo_movimiento" placeholder="Motivo"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Valores</legend>
+            <input type="number" id="costo_activo" placeholder="Costo">
+            <input type="number" id="valor_residual" placeholder="Valor Residual">
+            <input type="number" id="vida_util" placeholder="Vida Útil (meses)">
+            <textarea id="comentarios" placeholder="Comentarios"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Firmas</legend>
+            <input type="text" id="preparado_por" placeholder="Preparado por">
+            <input type="text" id="autorizado_por" placeholder="Autorizado por">
+            <input type="text" id="recibido_por" placeholder="Recibido por">
+        </fieldset>
+
+        <button type="submit">Guardar</button>
+    </form>
+
+    <h2>Registros Guardados</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descripción</th>
+                <th>Categoría</th>
+                <th>Ubicación</th>
+                <th>Movimiento</th>
+                <th>Fecha</th>
+                <th>Destino</th>
+                <th>Resp. Ant.</th>
+                <th>Resp. Nuevo</th>
+                <th>Motivo</th>
+                <th>Costo</th>
+                <th>Residual</th>
+                <th>Vida</th>
+                <th>Comentarios</th>
+                <th>Prep.</th>
+                <th>Autor.</th>
+                <th>Rec.</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody id="tablaDatos"></tbody>
+        <button onclick="imprimirTabla()">🖨 Imprimir Tabla</button>
+
+
+    </table>
+
+
+    <script src="formulario.js"></script>
+</body>
+
+</html>
